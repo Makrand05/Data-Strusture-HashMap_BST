@@ -32,4 +32,21 @@ public class BinaryTree<K extends Comparable> {
     }
 
 
+    public boolean isPresent(K value) {
+        return search(root,value);
+    }
+
+    private boolean search(BstNode<K> root, K value) {
+        if (root != null && root.data == value) {
+            return true;
+        }
+        if (root == null) {
+            return false;
+        }
+        if (root.data.compareTo(value) < 0) {
+            return search(root.rightNode, value);
+        } else {
+            return search(root.leftNode, value);
+        }
+    }
 }

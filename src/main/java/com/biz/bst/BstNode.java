@@ -3,7 +3,7 @@ package com.biz.bst;
 public class BstNode<K> {
     public BstNode<K> leftNode;
     public BstNode<K> rightNode;
-    K data;
+    public K data;
 
     public BstNode(K data) {
         this.leftNode = null;
