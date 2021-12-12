@@ -24,7 +24,8 @@ public class HashMapTest {
         int expectedResult = 2;
         Assert.assertEquals(expectedResult, actualResult);
     }
-@Test
+
+    @Test
     private void givenParagraph_whenStringPara_shouldReturnCount() {
         String para = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         String[] words = para.toLowerCase().split(" ");
@@ -41,6 +42,27 @@ public class HashMapTest {
         int actualResult = (int) hashMapParagraph.get("paranoid");
         int expectedResult = 3;
         Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    private void givenPara_whenStringPara_shouldRemovePara() {
+        String para = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+        String[] words = para.toLowerCase().split(" ");
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        for (String word : words) {
+            Integer value = hashMap.get(word);
+            if (value == null) {
+                value = 1;
+            } else {
+                value += 1;
+            }
+            hashMap.add(word, value);
+        }
+
+        hashMap.remove("they");
+        Integer expectedResult=null;
+        Integer actualResult = hashMap.get("they");
+        Assert.assertEquals(actualResult,expectedResult);
     }
 
 }

@@ -26,4 +26,12 @@ public class HashMap<K, V> {
         } else
             mapNode.setValue(value);
     }
+
+    public V remove(K key) {
+        MapNode<K,V> mapNode= (MapNode<K, V>) this.linkedList.delete(key);
+        if (mapNode==null){
+            System.out.println("Word is not there in para");
+        }
+        return mapNode.getValue();
+    }
 }
