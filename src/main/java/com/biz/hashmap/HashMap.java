@@ -23,8 +23,7 @@ public class HashMap<K, V> {
         if (mapNode == null) {
             mapNode = new MapNode<>(key, value);
             this.linkedList.append(mapNode);
-        }
-        else
+        } else
             mapNode.setValue(value);
     }
 }

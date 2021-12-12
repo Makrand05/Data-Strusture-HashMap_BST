@@ -18,7 +18,7 @@ public class MapNode<K, V> implements Node {
 
     @Override
     public void setKey(Object key) {
-       this.key= (K) key;
+        this.key = (K) key;
     }
 
 
