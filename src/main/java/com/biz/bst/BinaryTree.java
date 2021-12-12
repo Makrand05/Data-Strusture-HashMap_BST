@@ -1,7 +1,7 @@
 package com.biz.bst;
 
 public class BinaryTree<K extends Comparable> {
-    private BstNode<K> root;
+    public BstNode<K> root;
 
     public void add(K data) {
         this.root = this.insert(root, data);
@@ -30,5 +30,6 @@ public class BinaryTree<K extends Comparable> {
             return 1+this.countNode(root.leftNode)+this.countNode(root.rightNode);
         }
     }
+
 
 }

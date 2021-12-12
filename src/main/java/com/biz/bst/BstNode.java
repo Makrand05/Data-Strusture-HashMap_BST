@@ -10,4 +10,13 @@ public class BstNode<K> {
         this.rightNode = null;
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "\nBstNode{" +
+                "\nleftNode=" + leftNode +
+                ", rightNode=" + rightNode +
+                ", data=" + data +
+                '}';
+    }
 }
